@@ -1,0 +1,277 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/workerhome">#}
+{#  <table width="380" border="1">#}
+{#    <tr>#}
+{#      <th width="370" scope="row"><a href="/workerprofileview"> profile</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="/workerschedule">Schedule</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="/workrequest">Work request</a></th>#}
+{#    </tr>#}
+{##}
+{#    <tr>#}
+{#      <th scope="row"><a href="/orderstatus">order status</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="/wcomplaint">complaints</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="/workercmpreply">reply</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="#"> profilerating</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row"><a href="/worker_changepass_request">change password</a></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="42" scope="row"><a href="/logout">Logout</a></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ez work</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/temp/assets/img/favicon.png" rel="icon">
+  <link href="/static/temp/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/temp/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/temp/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/temp/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+{#      <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>#}
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <h1 class="logo me-auto"   ><a href="#" class="app_name" >EZ WORK</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a  href="/workerprofileview#contact">Profile</a></li>
+
+          <li class="dropdown"><a href="#"><span>Schedule </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/workerscheduleadd#contact">Add</a></li>
+              <li><a href="/workerschedule#contact">View</a></li>
+            </ul>
+          </li>
+                      <li class="dropdown"><a href="#"><span>Request</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/workrequest#contact">Verify </a></li>
+              <li><a href="/orderstatus#contact">Verified</a></li>
+            </ul>
+          </li>
+{#            <li><a  href="/todaysbooking#contact">Today's booking</a></li>#}
+          <li class="dropdown"><a href="#"><span>Complaint </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/wcomplaint#contact">Add </a></li>
+              <li><a href="/workercmpreply#contact">View</a></li>
+            </ul>
+          </li>
+          <li><a  href="/wreview#contact">Rating</a></li>
+          <li><a  href="/worker_changepass_request#contact">Change Password</a></li>
+          <li><a class="getstarted scrollto" href="/logout" onclick="return confirm('are you sure?')">LOGOUT</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>WORKER SERVICES</h1>
+          <h2> Empower Your Career with EZ WORK – The Ultimate Flexibility and Earning Opportunity!</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+{#            <a href="#about" class="btn-get-started scrollto">Get Started</a>#}
+{#            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>#}
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="/static/temp/assets/img/front.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="/static/temp/assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Cliens Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+             Set your own schedule and work when it suits you. Whether you're a student, freelancer, or someone seeking part-time work, [Your Platform Name] offers the flexibility you need.
+            </p>
+            <ul>
+                <h5>Worker Schedule:</h5>
+              <li> Allow workers to set up and manage their profiles, including availability and work preferences.</li>
+                <h5>Verify Work Request:</h5>
+              <li><i class="ri-check-double-line"></i> Develop an algorithm that matches worker skills, availability, and location with user requests.</li>
+                 <h5>Complaint System:</h5>
+              <li><i class="ri-check-double-line"></i> Allow users to provide feedback and ratings for completed jobs. Include an in-app messaging system for users and workers to communicate directly.t</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+              <ul>
+                <h5>Work Verification:</h5>
+              <li> Implement a check-in/check-out feature to verify when a worker starts and finishes a job.</li>
+                <h5>Payment and Billing:</h5>
+              <li><i class="ri-check-double-line"></i> Clearly communicate the pricing structure to users and workers.</li>
+
+            </ul>
+
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+<section id="contact" class="pricing">
+      <div class="container" data-aos="fade-up">
+{#        <div class="row" id="contact">#}
+          <div class="col-lg-12 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured" align="center">
+            <div class="section-title">
+          <h2>{{ request.session.heading }}</h2>
+        </div>
+              {% block body %}
+
+              {% endblock %}
+            </div>
+          </div>
+
+           </div>
+{#      </div>#}
+    </section><!-- End Pricing Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ez work</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">EZ WORK DESIGNERS</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/temp/assets/vendor/aos/aos.js"></script>
+  <script src="/static/temp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/temp/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/temp/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/temp/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/temp/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/temp/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/temp/assets/js/main.js"></script>
+
+</body>
+
+</html>

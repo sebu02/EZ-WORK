@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/workeraddpost" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <table class="table table-active">
+   <tr>
+      <th height="95" align="left" scope="row">Profile Picture</th>
+      <td>
+        <label for="photo"></label>
+        <input type="file" name="photo" id="photo"  />
+      </td>
+    </tr>
+    <tr>
+      <th width="221" align="left" scope="row">Name</th>
+      <td width="337"><label for="textfield"></label>
+      <input type="text" name="txtname" id="txtname" required/></td>
+    </tr>
+    <tr>
+      <th align="left" scope="row">Email</th>
+      <td><label for="textfield2"></label>
+      <input type="email" name="useremail" id="useremail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"required/></td>
+    </tr>
+     <tr>
+      <th align="left" scope="row">Address</th>
+      <td><label for="textfield7"></label>
+      <input type="text" name="address" id="address" required /></td>
+    </tr>
+    <tr>
+      <th align="left" scope="row">category</th>
+      <td><label for="select"></label>
+        <select name="ctgry" id="ctgry" required>
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th align="left" scope="row">Phone</th>
+      <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" maxlength="10" required /></td>
+    </tr>
+    <tr>
+      <th height="95" align="left" scope="row">Qualification</th>
+      <td>
+        <label for="Quali"></label>
+        <input type="text" name="Quali" id="Quali" required/>
+      </td>
+    </tr>
+    <tr>
+      <th align="left" scope="row">Additional info</th>
+      <td><label for="textfield8"></label>
+      <input type="text" name="addinfo" id="addinfo" required /></td>
+    </tr>
+    <tr>
+      <th align="left" scope="row">min wages</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="minw" id="minw" required /></td>
+    </tr>
+     <tr>
+      <th scope="row">password</th>
+      <th scope="row"><label for="textfield8"></label>
+      <input type="password" name="userpasswd" id="userpasswd" required  /></th>
+    </tr>
+    <tr>
+      <th scope="row"> confirm password</th>
+      <th scope="row"><label for="textfield6"></label>
+      <input type="password" name="cnf" id="cnf" /></th>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Register" class=" btn btn-outline-primary" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

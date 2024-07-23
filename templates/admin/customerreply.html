@@ -1,0 +1,49 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/user_view_complaint">
+  <table  class="table table-active table-bordered" style="border-color: white">
+    <tr>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">#</th>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">Customer</th>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">Complaint</th>
+      <th style="background-color:  #47b2e4;color: white" width="64" scope="col">Complaint date</th>
+      <th style="background-color:  #47b2e4;color: white" width="50" scope="col">Complaint time</th>
+      <th style="background-color:  #47b2e4;color: white" width="64" scope="col">Reply</th>
+      <th style="background-color:  #47b2e4;color: white" width="54" scope="col">Reply date</th>
+      <th style="background-color:  #47b2e4;color: white" width="71" scope="col">Reply time</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>
+          <img src="{{ i.CUSTOMER.photo}}" alt="no image" height="100" width="100" class="rounded-circle"/><br></td>
+          {{ i.CUSTOMER.name }}
+{#     <td> <br>#}
+{#         {{ i.CUSTOMER.email }}<br></td>#}
+{#     <td> {{ i.CUSTOMER.phone }}</td>#}
+      <td>{{ i.complaint }}</td>
+      <td>{{ i.cdate }}</td>
+      <td>{{ i.ctime }}</td>
+        {% if i.reply == 'pending' %}
+        <td colspan="3" align="center"><a href="/cmp_reply/{{ i.id }}#contact" class="btn btn-outline-primary" style="width: 25%">Reply</a></td>
+    {% else %}
+    <td>{{ i.reply }}</td>
+      <td>{{ i.rdate }}</td>
+      <td>{{ i.rtime }}</td>
+    {% endif %}
+    </tr>
+            {% endfor %}
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

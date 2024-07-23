@@ -1,0 +1,33 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/admin_view_category" method="post">
+<table class="table table-active table-bordered" style="border-color: white">
+    <tr>
+      <th style="background-color:  #47b2e4;color: white" width="26"  scope="col"  >#</th>
+      <th width="36" scope="col"  style="background-color:  #47b2e4;color: white">Category</th>
+      <th width="102" scope="col"  style="background-color:  #47b2e4;color: white"></th>
+      <th width="102" scope="col"  style="background-color:  #47b2e4;color: white"></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td height="84">{{ forloop.counter  }}</td>
+      <td>{{ i.name }}</td>
+           <td><a href="/admin_edit_category/{{ i.id }}#contact" class="btn btn-outline-success" style="width: 25%">Edit</a>
+           </td>
+        <td>
+      <a href="/admin_delete_category/{{ i.id }}" class="btn btn-outline-danger" style="width: 25%" onclick="return confirm('Are you sure?')">Delete</a></td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

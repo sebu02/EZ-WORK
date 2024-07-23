@@ -1,0 +1,54 @@
+{% extends 'worker/workerhomepage2.html' %}
+ {% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/workerprofileview">
+{% csrf_token %}
+  <table class="table table-bordered">
+      <tr>
+     <td colspan="2"><center><img src="{{ i.photo }}" height="200px" width="200px" alt=""/></center></td>
+    </tr>
+    <tr>
+      <th width="178" scope="row">Name</th>
+      <td width="298">{{ i.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td> {{ i.email }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Category</th>
+      <td>{{ i.CATEGORY.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td>{{ i.phone }}</td>
+    </tr>
+    <tr>
+      <th height="114" scope="row">Qualification</th>
+      <td>{{ i.qualification }}</td>
+    </tr>
+    <tr>
+      <th height="91" scope="row">Additional info</th>
+      <td>{{ i.additionalinfo }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Min wages</th>
+      <td>{{ i.min_wage }}</td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"><div align="center"><a href="/workerprofileedit/{{ i.id }}#contact" class="btn btn-outline-primary">Edit</a></div> </th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

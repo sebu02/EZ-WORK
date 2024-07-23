@@ -1,0 +1,53 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table class="table table-active table-bordered" style="border-color: white">
+    <tr style="background-color: navy">
+      <th style="background-color:  #47b2e4;color: white" width="47" scope="col">#</th>
+        <th style="background-color:  #47b2e4;color: white" width="47" scope="col">Profile Picture</th>
+      <th style="background-color:  #47b2e4;color: white" width="47" scope="col">Name</th>
+      <th style="background-color:  #47b2e4;color: white" width="66" scope="col">Email</th>
+      <th style="background-color:  #47b2e4;color: white" width="74" scope="col">Phone No</th>
+        <th style="background-color:  #47b2e4;color: white" width="113" scope="col">Category</th>
+      <th style="background-color:  #47b2e4;color: white" width="113" scope="col">Qualification</th>
+      <th style="background-color:  #47b2e4;color: white" width="96" scope="col">Min wage</th>
+      <th style="background-color:  #47b2e4;color: white" width="96" scope="col">Info</th>
+      <th style="background-color:  #47b2e4;color: white" width="96" scope="col">Location</th>
+      <th style="background-color:  #47b2e4;color: white" width="96" scope="col">Rating</th>
+         <th style="background-color:  #47b2e4;color: white" width="96" scope="col">no. of reports </th>
+         <th style="background-color:  #47b2e4;color: white" width="96" scope="col"> </th>
+
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td><p><img src="{{ i.photo}}" alt="no image" height="100" width="100" class="rounded-circle"/> </p></td>
+        <td><p>{{ i.name }}</p></td>
+      <td><p>{{ i.email }}</p></td>
+        <td><p>{{ i.phone }}</p></td>
+      <td><p>&nbsp;{{ i.CATEGORY.name }}</p></td>
+      <td><p>{{ i.qualification }} </p></td>
+      <td>{{ i.min_wage }}</td>
+      <td>{{ i.additionalinfo }}</td>
+     <td><a href="https://www.google.co.in/maps/?q={{ i.latitude }},{{ i.longitude }}" class="btn btn-outline-warning">Locate</a> </td>
+     <td><a href="/rating_view_request/{{ i.id }}#contact" class="btn btn-outline-dark">Rating</a> </td>
+        <td>{{ i.count }}</td>
+     <td><p><a href="/blacklistdelete/{{ i.LOGIN.id }}" class="btn btn-outline-danger" style="width: 100%" onclick="return confirm('Are you sure?')">Remove</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

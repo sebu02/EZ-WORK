@@ -1,0 +1,34 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table width="350" border="1" class="table table-active table-bordered" style="border-color: white" >
+  <tr>
+    <th align="center" style="background-color:  #47b2e4;color: white" width="83" scope="col">#</th>
+    <th align="center" style="background-color:  #47b2e4;color: white" width="83" scope="col">Name</th>
+    <th align="center" style="background-color:  #47b2e4;color: white" width="88" scope="col">Date</th>
+    <th align="center" style="background-color:  #47b2e4;color: white" width="157" scope="col">Description</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td align="center">{{ forloop.counter }}&nbsp;</td>
+    <td align="center"><img src="{{ i.CUSTOMER.photo}}" alt="no image" height="100" width="100" class="rounded-circle"/><br>{{ i.CUSTOMER.name }}</td>
+    <td align="center">&nbsp;{{ i.date }}</td>
+    <td align="center">{{ i.description }}</td>
+  </tr>
+    {% endfor %}
+</table>
+  <h3>&nbsp;</h3>
+
+ 
+</form>
+</body>
+</html>
+{% endblock %}

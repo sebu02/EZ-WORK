@@ -1,0 +1,27 @@
+{% extends 'worker/workerhomepage2.html' %}
+ {% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/workerscheduleadd_post">
+    {% csrf_token %}
+  <table class="table table-bordered" width="500">
+    <tr>
+      <th  scope="row">Available Date</th>
+      <td>
+      <input type="date" name="sdate" id="sdate" class="form-control" required min="{{ data }}"/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><div align="center"><input type="submit" name="button" id="button" value="Update" class="btn btn-outline-primary" /></div> </th>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

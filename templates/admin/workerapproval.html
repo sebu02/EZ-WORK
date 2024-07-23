@@ -1,0 +1,47 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table class="table table-active table-bordered" style="border-color: white">
+    <tr>
+      <th style="background-color:  #47b2e4;color: white"width="97" scope="col">#</th>
+        <th style="background-color:  #47b2e4;color: white"width="97" scope="col">Profile Photo</th>
+      <th style="background-color:  #47b2e4;color: white"width="97" scope="col">Name</th>
+      <th style="background-color:  #47b2e4;color: white"width="78" scope="col">Email</th>
+      <th style="background-color:  #47b2e4;color: white"width="108" scope="col">Phone</th>
+      <th style="background-color:  #47b2e4;color: white"width="114" scope="col">Category</th>
+      <th style="background-color:  #47b2e4;color: white"width="158" scope="col"><p>Qualification</p></th>
+      <th style="background-color:  #47b2e4;color: white"width="123" scope="col">Min wage</th>
+      <th style="background-color:  #47b2e4;color: white"width="123" scope="col">Location</th>
+      <th style="background-color:  #47b2e4;color: white"width="123" scope="col">Info</th>
+      <th style="background-color:  #47b2e4;color: white"width="96" scope="col">Status</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td><img src="{{ i.photo }}" height="50px" width="50px" class="rounded-circle" alt=""/></td>
+      <td>{{ i.name }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>&nbsp;{{ i.phone }}</td>
+      <td>{{ i.CATEGORY.name }}</td>
+      <td>{{ i.qualification }}</td>
+      <td>&nbsp;{{ i.min_wage}}</td>
+
+        <td><a href="https://www.google.co.in/maps/?q={{ i.latitude }},{{ i.longitude }}" class="btn btn-outline-primary">Locate</a> </td>
+        <td>&nbsp;{{ i.additionalinfo}}</td>
+      <td><p><a href="/worker_approval_post/{{ i.LOGIN.id }}"  class="btn btn-outline-success" style="width: 100%">Approve</a></p>
+      <p><a href="/worker_reject/{{ i.LOGIN.id }}" class="btn btn-outline-danger" style="width: 100%" onclick="return confirm('Are you sure?')">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'admin/admin_home.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/worker_view_complaint">
+  <table class="table table-active table-bordered" style="border-color: white">
+    <tr>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">#</th>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">Worker</th>
+      <th style="background-color:  #47b2e4;color: white" width="73" scope="col">Complaint</th>
+      <th style="background-color:  #47b2e4;color: white" width="64" scope="col">C date</th>
+      <th style="background-color:  #47b2e4;color: white" width="64" scope="col">Reply</th>
+      <th style="background-color:  #47b2e4;color: white" width="54" scope="col">R date</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+    <td>{{ forloop.counter }}</td>
+    <td><center><img src="{{ i.WORKER.photo}}" alt="no image" height="100" width="100" class="rounded-circle"/>
+    <br>
+        {{ i.WORKER.name }}</center>
+
+    </td>
+      <td>{{ i.complaint }}</td>
+      <td>&nbsp;{{ i.cdate }}</td>
+         {% if i.reply == 'pending' %}
+        <td colspan="3" align="center"><a href="/cmp_replyy/{{ i.id }}#contact" class="btn btn-outline-primary" style="width: 25%">Reply</a></td>
+    {% else %}
+    <td>{{ i.reply }}</td>
+      <td>{{ i.rdate }}</td>
+    {% endif %}
+
+    </tr>
+  {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
